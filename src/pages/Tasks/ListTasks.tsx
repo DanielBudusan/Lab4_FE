@@ -23,6 +23,7 @@ import { arrowForward, addCircleOutline } from "ionicons/icons";
 
 const ListTasks: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")!))
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,12 +34,13 @@ const ListTasks: React.FC = () => {
   }, []);
 
   console.log(tasks);
+  console.log(user)
 
   return (
     <IonContent className="ion-padding">
       <IonHeader>
         <IonItem color="primary">
-          <IonTitle>Task List for project ...</IonTitle>
+          <IonTitle>Task List for project x</IonTitle>
         </IonItem>
       </IonHeader>
 
@@ -54,13 +56,13 @@ const ListTasks: React.FC = () => {
               <IonLabel class="ion-text-left">Status</IonLabel>
             </IonItem>
           </IonCol>
-          <IonCol size="2">
+          {user ? <IonCol size="2">
             <IonItem>
               <Link to={"/tasks/create"}>
                 <IonIcon icon={addCircleOutline}></IonIcon>
               </Link>
             </IonItem>
-          </IonCol>
+          </IonCol> : null}
         </IonRow>
         <IonRow>
           <IonCol></IonCol>
@@ -79,13 +81,13 @@ const ListTasks: React.FC = () => {
               </IonItem>
             </IonCol>
 
-            <IonCol size="2">
+            {user ? <IonCol size="2">
               <IonItem>
                 <Link to={`/tasks/${task.id}`}>
                   <IonIcon slot="end" icon={arrowForward}></IonIcon>
                 </Link>
               </IonItem>
-            </IonCol>
+            </IonCol> : null}
           </IonRow>
         ))}
       </IonGrid>

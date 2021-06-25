@@ -42,7 +42,8 @@ const EditTask: React.FC<{
       projectId,
     };
     await editTask(id, task).then(() => {
-      history.push(`/tasks/${id}`);
+      window.location.href = `/tasks/${id}`
+      // history.push(`/tasks/${id}`);
     });
   };
 

@@ -135,7 +135,7 @@ const CreateTask: React.FC = () => {
                 onIonChange={(e) => setStatus(e.detail.value)}
               >
                 <IonSelectOption value="open">Open</IonSelectOption>
-                <IonSelectOption value="Inprogres">In progres</IonSelectOption>
+                <IonSelectOption value="In progres">In progres</IonSelectOption>
                 <IonSelectOption value="closed">Closed</IonSelectOption>
               </IonSelect>
             </IonItem>

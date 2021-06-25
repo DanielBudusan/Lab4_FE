@@ -57,7 +57,7 @@ const TaskDetails: React.FC = () => {
           <IonButton onClick={backToList} slot="start">
             <IonIcon slot="start" icon={arrowBack}></IonIcon>
           </IonButton>
-          <IonTitle>Task Detail</IonTitle>
+          <IonTitle>Task {task?.title} details</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>

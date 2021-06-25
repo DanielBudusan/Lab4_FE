@@ -15,6 +15,7 @@ import TaskDetails from "./pages/Tasks/TaskDetails";
 import Login from "./pages/Login/Login";
 import CreateTask from "./pages/Tasks/CreateTask"
 import EditTask from "./components/EditTask"
+import Logout from "./pages/Logout/Logout"
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -59,6 +60,10 @@ const App: React.FC = () => (
         <Route path="/tasks/create">
           <CreateTask />
         </Route>
+        <Route path="/logout">
+          <Logout />
+        </Route>
+
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
